@@ -1,0 +1,11 @@
+version: '3.8'
+services:
+  meilisearch:
+    image: getmeili/meilisearch:latest
+    container_name: meilisearch
+    ports:
+      - "7700:7700"
+    environment:
+      - MEILI_MASTER_KEY=50utlw0tVSmytl3c-Z3F9EqtiAP1vz48Xg5Fa3PYwaQ
+    volumes:
+      - meilisearch-data:/data.ms

@@ -1,0 +1,16 @@
+// project-root/tsconfig.json
+{
+    "compilerOptions": {
+      "target": "ESNext",
+      "strict": true,
+      "esModuleInterop": true,
+      "skipLibCheck": true,
+      "forceConsistentCasingInFileNames": true,
+      "moduleResolution": "node", // Fungerar för både Vite och Express
+      "baseUrl": ".", // Baserat på roten
+      "paths": {
+        "@shared/schemas/*": ["shared/schemas/*"], // Löser "@shared/schemas/schemas"
+        "@shared/types/*": ["shared/types/*"]      // Löser "@shared/types/types"
+      }
+    }
+  }
