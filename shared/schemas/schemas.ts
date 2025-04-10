@@ -35,7 +35,7 @@ export const customerSchema: z.ZodType<Customer> = z.object({
   contact_email: z.string().email("Ogiltig e-postadress"),
   contact_phone: z.string().min(1, "Telefonnummer krävs"),
   domain_name: z.string().optional(),
-  status: z.string().optional(),
+  status: z.enum(["active", "inactive"]).optional(),
   edr_site_token: z.string().optional(),
   EDR: z.boolean(),
   VPN: z.boolean(),
