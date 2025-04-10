@@ -2,8 +2,8 @@ FROM node:23-alpine
 WORKDIR /app
 
 # Kopiera root package.json och tsconfig.json
-COPY ../package.json ./
-COPY ../tsconfig.json ./
+COPY package.json ./
+COPY tsconfig.json ./
 
 # Kopiera server-mappen
 COPY server/ ./server/
