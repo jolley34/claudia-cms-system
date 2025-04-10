@@ -33,7 +33,7 @@ export const GlobalStyles = createGlobalStyle`
     border: 1px solid #e0e0e0;
     border-radius: 4px;}
 
-  button {
+    button {
     cursor: pointer;
     padding: 0.5rem 1rem;
     font-size: 1rem;
@@ -45,6 +45,11 @@ export const GlobalStyles = createGlobalStyle`
 
     &:hover {
       background-color: #0056b3;
+    }
+
+    @media (max-width: 455px) {
+      padding: 0.3rem 0.6rem;
+      font-size: 0.875rem;
     }
   }
 

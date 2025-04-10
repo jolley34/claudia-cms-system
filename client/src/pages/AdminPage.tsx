@@ -29,6 +29,11 @@ const NavList = styled.ul`
   list-style: none;
   display: flex;
   gap: 1rem;
+
+  @media (max-width: 455px) {
+    gap: 0.5rem;
+    flex-wrap: wrap;
+  }
 `;
 
 const NavItem = styled.li`
@@ -40,6 +45,11 @@ const NavItem = styled.li`
 
   &:hover {
     background-color: #e0e0e0;
+  }
+
+  @media (max-width: 455px) {
+    padding: 0.3rem 0.6rem;
+    font-size: 0.875rem;
   }
 `;
 
