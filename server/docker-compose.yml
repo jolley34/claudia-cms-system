@@ -12,7 +12,7 @@ services:
   server:
     build: ./server
     environment:
-      - MEILISEARCH_HOST=http://meilisearch:7700
+      - MEILISEARCH_HOST=https://ms-6e53e0cff4eb-19500.fra.meilisearch.io/
       - MEILI_MASTER_KEY=${MEILI_MASTER_KEY}
     depends_on:
       - meilisearch
