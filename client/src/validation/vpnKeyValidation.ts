@@ -1,6 +1,6 @@
 // src/validation/vpnKeyValidation.ts
 import { z } from "zod";
-import { vpnKeyStringSchema } from "../../src/schemas/schemas";
+import { vpnKeyStringSchema } from "../schemas/schemas";
 
 export interface ValidationResult {
   validKeys: string[];
