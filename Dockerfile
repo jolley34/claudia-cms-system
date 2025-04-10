@@ -1,21 +1,15 @@
 FROM node:23-alpine
 WORKDIR /app
-
-# Kopiera root package.json och tsconfig.json
 COPY package.json ./
 COPY tsconfig.json ./
-
-# Kopiera server-mappen
 COPY server/ ./server/
-
-# Installera beroenden för servern
 RUN npm install --prefix server
-
-# Bygg servern
+COPY server/tsconfig.json ./server/
 WORKDIR /app/server
 RUN npm run build
-
-# Sätt miljövariabler och exponera port
+# Felsökning
+RUN ls -l /app/server/dist || echo "dist folder not found"
+RUN ls -l /app/server/dist/src || echo "src folder not found"
 ENV NODE_ENV=production
 EXPOSE 5001
-CMD ["node", "dist/server/src/index.js"]
+CMD ["node", "dist/src/index.js"]
