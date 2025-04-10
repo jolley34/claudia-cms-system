@@ -5,10 +5,7 @@ export const corsOptions = {
     origin: string | undefined,
     callback: (err: Error | null, allow?: boolean) => void
   ) => {
-    const allowedOrigins = [
-      "http://localhost:3000",
-      "https://claudia-cms-system.netlify.app",
-    ];
+    const allowedOrigins = ["https://claudia-cms-system.netlify.app"];
     if (!origin || allowedOrigins.includes(origin)) {
       callback(null, true);
     } else {
