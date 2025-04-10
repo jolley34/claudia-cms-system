@@ -18,4 +18,4 @@ RUN npm run build
 # Sätt miljövariabler och exponera port
 ENV NODE_ENV=production
 EXPOSE 5001
-CMD ["npm", "start"]
+CMD ["node", "dist/server/src/index.js"]
