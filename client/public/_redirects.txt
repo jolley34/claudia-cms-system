@@ -1,1 +1,2 @@
-/api/*  https://claudia-cms-system.netlify.app//api/:splat  200
+/api/*    https://claudia-cms-system.onrender.com/api/:splat  200
+/*        https://claudia-cms-system.netlify.app/:splat    200
