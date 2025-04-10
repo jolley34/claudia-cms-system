@@ -1,7 +1,6 @@
 import cookieParser from "cookie-parser";
 import express from "express";
 
-import path from "path";
 import cors from "./config/cors";
 import adminRoutes from "./routes/adminRoutes";
 import authRoutes from "./routes/authRoutes";
@@ -12,9 +11,13 @@ const app = express();
 
 // Middleware
 app.use(cors);
-
 app.use(express.json());
 app.use(cookieParser());
+
+// Testroute för att verifiera att servern fungerar
+app.get("/", (req, res) => {
+  res.send("Server is running!");
+});
 
 // Autentiserings-routes
 app.use("/api/auth", authRoutes);
@@ -27,15 +30,6 @@ app.use("/api/admins", adminRoutes);
 
 // VPN-nyckel routes
 app.use("/api/vpn_keys", vpnKeyRoutes);
-
-// Servera Vite:s byggda filer i produktion
-if (process.env.NODE_ENV === "production") {
-  const clientDistPath = path.resolve(__dirname, "../../client/dist");
-  app.use(express.static(clientDistPath));
-  app.get("*", (req, res) => {
-    res.sendFile(path.resolve(clientDistPath, "index.html"));
-  });
-}
 
 // Starta servern
 const PORT = process.env.PORT || 5001;
