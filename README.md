@@ -132,37 +132,39 @@ Godkänt (G):För att du ska få Godkänt (G) på ditt examensarbete, behöver d
 
 - [x] Planering och Research:oUtföra en noggrann målgruppsanalys.
 
-o Användaett projekthanteringsverktyg för backlog till exempel TrelloellerKanbanföratt strukturera arbetet.
+- [x] Använda ett projekthanteringsverktyg för backlog till exempel TrelloellerKanbanföratt strukturera arbetet.
 
 - [x] Design och Prototyping:oSkapa wireframes och prototyp i Figma som följer UX/UI-principer.
 
-oSe till att designen är responsiv för minst två olika skärmstorlekaroch följer WCAG 2.1-standarder.
+- [x] Se till att designen är responsiv för minst två olika skärmstorlekaroch följer WCAG 2.1-standarder.
 
 - [x] Applikationsutveckling:oUtveckla med ett modernt JavaScript-ramverk.
 
-o Använd en databas för lagring och hämtning av data.
+- [x] Använd en databas för lagring och hämtning av data.
 
-o Implementera state-hantering och skapa dynamiska komponenter med reaktivitet och interaktivitet.oFölja WCAG 2.1-standarder och använda semantisk HTML.
+- [x] Implementera state-hantering och skapa dynamiska komponenter med reaktivitet och interaktivitet.
 
-o För webbapp:Produkten ska vara responsiv och fungera korrekt på minst två skärmstorlekar, till exempel mobil och dator. Gränssnittet ska anpassa sig för att ge en användarvänlig upplevelse på båda dessa enheter.
+- [x] Följa WCAG 2.1-standarder och använda semantisk HTML.
 
-o För native mobilapp:Produkten ska anpassas till olika skärmstorlekar och enhetsorienteringar (porträtt och landskap). Gränssnittet ska fungera sömlöst på flera mobila enheter, som smartphones och surfplattor, med korrekt layout, skalning och användarvänlighet oavsett skärmstorlek.
+- [x] För webbapp:Produkten ska vara responsiv och fungera korrekt på minst två skärmstorlekar, till exempel mobil och dator. Gränssnittet ska anpassa sig för att ge en användarvänlig upplevelse på båda dessa enheter.
+
+- [x] För native mobilapp:Produkten ska anpassas till olika skärmstorlekar och enhetsorienteringar (porträtt och landskap). Gränssnittet ska fungera sömlöst på flera mobila enheter, som smartphones och surfplattor, med korrekt layout, skalning och användarvänlighet oavsett skärmstorlek.
 
 - [x] Versionshantering:
 
-o Arbeta med Git och ha ett repo på GitHub.
+- [x] Arbeta med Git och ha ett repo på GitHub.
 
 - [x] Slutrapport, skriv en 2-3 sidor lång rapport med:
 
-o Abstract på engelska.
+- [x] Abstract på engelska.
 
-o Tech stack och motivering av valen.
+- [x] Tech stack och motivering av valen.
 
-o Dokumentation av arbetsprocess, planering och research.
+- [x] Dokumentation av arbetsprocess, planering och research.
 
 - [x] Deploy:
 
-o Ditt projekt ska vara hostat och tillgängligt för att kunna visas i en webbläsareeller simulator.
+- [x] Ditt projekt ska vara hostat och tillgängligt för att kunna visas i en webbläsareeller simulator.
 
 ---
 
