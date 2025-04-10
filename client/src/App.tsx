@@ -1,10 +1,10 @@
-import { GoogleUser } from "@shared/types/types";
 import Cookies from "js-cookie";
 import { useState } from "react";
 import { BrowserRouter as Router } from "react-router-dom";
 import { AppRoutes } from "./routes/AppRoutes";
 import api from "./services/api";
 import { GlobalStyles } from "./styles/GlobalStyles";
+import { GoogleUser } from "./types/types";
 
 function App() {
   const [user, setUser] = useState<GoogleUser | null>(null);
