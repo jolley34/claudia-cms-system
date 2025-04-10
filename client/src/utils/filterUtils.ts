@@ -1,5 +1,5 @@
 // src/utils/filterUtils.ts
-import { Customer, VpnKey } from "../../../shared/types/types";
+import { Customer, VpnKey } from "../types/types";
 
 export const filterCustomers = (
   customers: Customer[],

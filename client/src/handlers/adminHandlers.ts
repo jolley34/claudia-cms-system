@@ -1,7 +1,7 @@
 // src/handlers/adminHandlers.ts
 import { FormEvent } from "react";
-import { Admin } from "../../../shared/types/types";
 import { addAdmin, deleteAdmin, getAdmins } from "../services/adminService";
+import { Admin } from "../types/types";
 
 // Hämta alla admins
 export const fetchAdmins = async (

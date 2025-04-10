@@ -1,7 +1,7 @@
 // src/components/CustomerList/CustomerCard.tsx
 import React, { useState } from "react";
 import styled from "styled-components";
-import { Customer } from "../../../../shared/types/types";
+import { Customer } from "../../types/types";
 import { highlightMatch } from "../../utils/highlightMatch";
 
 const Card = styled.div`

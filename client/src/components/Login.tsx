@@ -2,11 +2,11 @@ import { GoogleLogin, GoogleOAuthProvider } from "@react-oauth/google";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
-import { GoogleUser } from "../../../shared/types/types";
 import {
   handleGoogleError,
   handleGoogleSuccess,
 } from "../handlers/authHandlers";
+import { GoogleUser } from "../types/types";
 
 const Card = styled.div`
   padding: 2rem;

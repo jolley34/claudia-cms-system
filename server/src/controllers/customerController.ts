@@ -1,6 +1,6 @@
 import { Request, Response } from "express";
-import { Customer, MeilisearchError } from "../../../shared/types/types";
 import meilisearch from "../config/meilisearch";
+import { Customer, MeilisearchError } from "../types/types";
 
 // Fix the return type to Promise<void>
 export const getCustomers = async (

@@ -2,7 +2,7 @@ import { CredentialResponse } from "@react-oauth/google";
 import axios from "axios";
 import Cookies from "js-cookie";
 import { NavigateFunction } from "react-router-dom";
-import { Admin, GoogleUser } from "../../../shared/types/types";
+import { Admin, GoogleUser } from "../types/types";
 
 export const handleGoogleSuccess = async (
   credentialResponse: CredentialResponse,

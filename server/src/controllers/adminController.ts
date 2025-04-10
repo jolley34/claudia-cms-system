@@ -1,6 +1,6 @@
 import { Request, Response } from "express";
-import { Admin } from "../../../shared/types/types";
 import meiliClient from "../config/meilisearch";
+import { Admin } from "../types/types";
 
 const adminIndex = meiliClient.index("admins");
 

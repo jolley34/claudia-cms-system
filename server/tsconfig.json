@@ -2,23 +2,22 @@
 {
   "extends": "../tsconfig.json",
   "compilerOptions": {
-    "target": "es6", // Fungerar bra med Node.js
-    "module": "commonjs", // Express och Nodemon använder CommonJS
-    "outDir": "./dist", // Bygg till server/dist
-    "rootDir": "..",// Roten av projektet, så shared/ och server/ inkluderas
-    "jsx": "react-jsx", // Om du använder JSX i servern, annars kan detta tas bort
+    "target": "es6",
+    "module": "commonjs",
+    "outDir": "./dist",
+    "rootDir": "..",
+    "jsx": "react-jsx",
     "allowSyntheticDefaultImports": true,
     "esModuleInterop": true,
-    "baseUrl": "..", // Basen är project-root
+    "baseUrl": "..",
     "paths": {
-      "@shared/schemas/*": ["shared/schemas/*"], // Mappas till shared/schemas/
-      "@shared/types/*": ["shared/types/*"]      // Mappas till shared/types/
+      "server/schemas/*": ["server/schemas/*"],
+      "server/types/*": ["server/types/*"]
     }
   },
   "include": [
     "./**/*.ts",
-    "./**/*.tsx",
-    "../shared/**/*.ts" // Inkluderar shared/ för TypeScript
+    "./**/*.tsx"
   ],
   "exclude": [
     "node_modules",

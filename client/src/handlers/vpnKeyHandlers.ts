@@ -1,11 +1,11 @@
 // src/handlers/vpnKeyHandlers.ts
 import { DragEvent } from "react";
-import { VpnKey } from "../../../shared/types/types";
 import {
   addVpnKeys,
   deleteVpnKey,
   getVpnKeys,
 } from "../services/vpnKeyService";
+import { VpnKey } from "../types/types";
 import {
   validateVpnKeys,
   ValidationResult,

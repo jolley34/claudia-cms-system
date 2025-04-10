@@ -1,7 +1,7 @@
 // src/components/VpnKeyList/VpnKeyCard.tsx
 import React from "react";
 import styled from "styled-components";
-import { VpnKey } from "../../../../shared/types/types";
+import { VpnKey } from "../../types/types";
 import { highlightMatch } from "../../utils/highlightMatch";
 
 const Card = styled.div`

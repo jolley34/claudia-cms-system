@@ -1,4 +1,3 @@
-// shared/types.ts
 export interface Customer {
   id: string;
   customer_name: string;
@@ -33,15 +32,6 @@ export interface VpnKey {
   vpn_key: string;
   status: "unused" | "taken";
   createdAt: string;
-}
-
-export interface ToolUrl {
-  id: string;
-}
-
-export interface MeilisearchError {
-  message: string;
-  code: string;
 }
 
 export interface ApiResponse {

@@ -1,13 +1,13 @@
 // server/controllers/vpnKeyController.ts
 import { Request, Response } from "express";
 import { z } from "zod";
+import meiliClient from "../config/meilisearch";
 import {
   vpnKeySchema,
   vpnKeysInputSchema,
   vpnKeyStringSchema,
-} from "../../../shared/schemas/schemas";
-import { VpnKey } from "../../../shared/types/types";
-import meiliClient from "../config/meilisearch";
+} from "../schemas/schemas";
+import { VpnKey } from "../types/types";
 
 const vpnKeyIndex = meiliClient.index("vpn_keys");
 

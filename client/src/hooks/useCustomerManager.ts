@@ -1,5 +1,4 @@
 // src/hooks/useCustomerManager.ts
-import { Customer } from "@shared/types/types";
 import { useEffect, useMemo, useState } from "react";
 import {
   fetchCustomers,
@@ -8,6 +7,7 @@ import {
   handleUpdateCustomer,
   startEditing,
 } from "../handlers/customerHandlers";
+import { Customer } from "../types/types";
 import { filterCustomers, sortCustomers } from "../utils/filterUtils";
 
 export const useCustomerManager = () => {

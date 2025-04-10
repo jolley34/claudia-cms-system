@@ -1,6 +1,5 @@
-// server shared/schemas/schemas.ts
-import { Admin, Customer, VpnKey } from "@shared/types/types";
 import { z } from "zod";
+import { Admin, Customer, VpnKey } from "../types/types";
 
 // Schema för VPN-nyckel (strängen)
 export const vpnKeyStringSchema = z
@@ -48,7 +47,7 @@ export const vpnKeysInputSchema = z.object({
   keys: z.string().min(1, "Inga nycklar angivna"),
 });
 
-// Exportera typer från Zod om du vill använda dem (valfritt, eftersom vi behåller dina gamla)
+// Exportera typer från Zod
 export type ZodVpnKey = z.infer<typeof vpnKeySchema>;
 export type ZodAdmin = z.infer<typeof adminSchema>;
 export type ZodCustomer = z.infer<typeof customerSchema>;

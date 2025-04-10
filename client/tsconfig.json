@@ -2,24 +2,28 @@
 {
   "extends": "../tsconfig.json",
   "compilerOptions": {
-    "target": "es5", // För bred webbläsarkompatibilitet
+    "target": "es5",
     "lib": ["DOM", "DOM.Iterable", "ESNext"],
     "allowJs": true,
     "allowSyntheticDefaultImports": true,
-    "module": "esnext", // Vite använder ES Modules
+    "module": "esnext",
     "moduleResolution": "node",
     "resolveJsonModule": true,
-    "isolatedModules": true, // Vite kräver detta för snabbare bygg
-    "noEmit": true, // Vite hanterar bygg, ingen emit från TS
-    "jsx": "react-jsx", // För React 17+
+    "isolatedModules": true,
+    "noEmit": true,
+    "jsx": "react-jsx",
     "noFallthroughCasesInSwitch": true,
-    "rootDir": "../" // Ändrat till client/ som bas, eftersom Vite fungerar relativt till klientmappen
+    "rootDir": "..",
+    "baseUrl": "..",
+    "paths": {
+      "client/schemas/*": ["client/schemas/*"],
+      "client/types/*": ["client/types/*"]
+    }
   },
   "include": [
     "src/**/*.ts",
     "src/**/*.tsx",
-    "../shared/**/*.ts",
-    "vite-env.d.ts"  
+    "vite-env.d.ts"
   ],
   "exclude": [
     "node_modules",

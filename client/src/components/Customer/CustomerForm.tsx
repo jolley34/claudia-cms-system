@@ -1,7 +1,7 @@
 // src/components/CustomerList/CustomerForm.tsx
 import React from "react";
 import styled from "styled-components";
-import { Customer } from "../../../../shared/types/types";
+import { Customer } from "../../types/types";
 
 const Card = styled.div`
   display: flex;

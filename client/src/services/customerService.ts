@@ -1,5 +1,5 @@
 // src/services/customerService.ts
-import { Customer } from "../../../shared/types/types";
+import { Customer } from "../types/types";
 import api from "./api";
 
 export const getCustomers = () => api.get<Customer[]>("/customers");

@@ -1,7 +1,7 @@
 // src/components/AdminList/AdminCard.tsx
 import React from "react";
 import styled from "styled-components";
-import { Admin } from "../../../../shared/types/types";
+import { Admin } from "../../types/types";
 import { highlightMatch } from "../../utils/highlightMatch";
 
 const Card = styled.div`

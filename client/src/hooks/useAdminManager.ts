@@ -1,11 +1,11 @@
 // src/hooks/useAdminManager.ts
-import { Admin } from "@shared/types/types";
 import { useEffect, useState } from "react";
 import {
   fetchAdmins,
   handleDelete,
   handleSubmitAdmin,
 } from "../handlers/adminHandlers";
+import { Admin } from "../types/types";
 
 export const useAdminManager = () => {
   const [name, setName] = useState("");

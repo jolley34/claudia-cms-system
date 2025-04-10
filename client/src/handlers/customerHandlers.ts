@@ -1,11 +1,11 @@
 import { v4 as uuidv4 } from "uuid";
-import { Customer } from "../../../shared/types/types";
 import {
   addCustomer,
   deleteCustomer,
   getCustomers,
   updateCustomer,
 } from "../services/customerService";
+import { Customer } from "../types/types";
 
 export const fetchCustomers = async (
   setCustomers: React.Dispatch<React.SetStateAction<Customer[]>>

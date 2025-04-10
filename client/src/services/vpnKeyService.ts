@@ -1,5 +1,5 @@
 // src/services/vpnKeyService.ts
-import { AddVpnKeysResponse, VpnKey } from "../../../shared/types/types";
+import { AddVpnKeysResponse, VpnKey } from "../types/types";
 import api from "./api";
 
 export const getVpnKeys = () => api.get<{ results: VpnKey[] }>("/vpn_keys");

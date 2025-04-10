@@ -1,5 +1,4 @@
 // src/hooks/useVpnKeyManager.ts
-import { VpnKey } from "@shared/types/types";
 import { useEffect, useState } from "react";
 import {
   fetchVpnKeys,
@@ -7,6 +6,7 @@ import {
   handleDrop,
   handleFileUpload,
 } from "../handlers/vpnKeyHandlers";
+import { VpnKey } from "../types/types";
 import { ValidationResult } from "../validation/vpnKeyValidation";
 
 export const useVpnKeyManager = () => {

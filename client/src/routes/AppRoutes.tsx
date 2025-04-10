@@ -1,8 +1,8 @@
 // src/routes/AppRoutes.tsx
 import { Navigate, Route, Routes } from "react-router-dom";
-import { GoogleUser } from "../../../shared/types/types";
 import Login from "../components/Login";
 import { AdminPage } from "../pages/AdminPage";
+import { GoogleUser } from "../types/types";
 
 interface AppRoutesProps {
   user: GoogleUser | null;

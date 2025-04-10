@@ -1,5 +1,5 @@
 // src/services/adminService.ts
-import { Admin, ApiResponse } from "../../../shared/types/types";
+import { Admin, ApiResponse } from "../types/types";
 import api from "./api";
 
 export const getAdmins = () => api.get<{ results: Admin[] }>("/admins");
