@@ -9,9 +9,6 @@ export default defineConfig({
   },
   build: {
     outDir: "dist",
-    rollupOptions: {
-      external: ["zod"],
-    },
   },
   server: {
     port: 3000,
