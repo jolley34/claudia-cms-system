@@ -9,3 +9,15 @@ services:
       - MEILI_MASTER_KEY=50utlw0tVSmytl3c-Z3F9EqtiAP1vz48Xg5Fa3PYwaQ
     volumes:
       - meilisearch-data:/data.ms
+  server:
+    build: ./server
+    environment:
+      - MEILISEARCH_HOST=http://meilisearch:7700
+      - MEILI_MASTER_KEY=50utlw0tVSmytl3c-Z3F9EqtiAP1vz48Xg5Fa3PYwaQ
+    depends_on:
+      - meilisearch
+    ports:
+      - "5001:5001"
+
+volumes:
+  meilisearch-data:
