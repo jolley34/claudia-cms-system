@@ -80,6 +80,77 @@ cd ../server
 npm install
 ```
 
+## 🐳 Installera Meilisearch med Docker
+
+För att köra Meilisearch lokalt använder projektet **Docker**. Se till att Docker är installerat på din dator.  
+👉 [Ladda ner Docker här](https://www.docker.com/products/docker-desktop) om du inte redan har det.
+
+### 1️⃣ Skapa en `docker-compose.yml` i projektroten:
+
+```yaml
+version: "3.8"
+services:
+  meilisearch:
+    image: getmeili/meilisearch:latest
+    container_name: meilisearch
+    ports:
+      - "7700:7700"
+    environment:
+      - MEILI_MASTER_KEY=your-api-key
+    volumes:
+      - meilisearch-data:/data.ms
+
+volumes:
+  meilisearch-data:
+```
+
+> 🔑 Byt ut `your-api-key` mot samma nyckel som du använder i `server/.env`.
+
+### 2️⃣ Starta Meilisearch-tjänsten:
+
+```bash
+docker-compose up -d
+```
+
+### 3️⃣ Kontrollera att Meilisearch är igång:
+
+Öppna [http://localhost:7700](http://localhost:7700) i din webbläsare.  
+Du bör se ett svar från Meilisearch som bekräftar att det körs korrekt.
+
+### 🛠️ Vanliga fel & lösningar
+
+#### ❌ Fel: `docker-compose: command not found`
+
+Det betyder att Docker Compose inte är installerat eller inte tillgängligt i terminalen.
+
+✅ **Lösning:**
+Installera Docker Compose genom att följa instruktionerna för ditt operativsystem här:  
+👉 https://docs.docker.com/compose/install/
+
+#### ❌ Fel: `bind: address already in use`
+
+Det betyder att port `7700` redan används av en annan tjänst.
+
+✅ **Lösning:**
+
+- Stoppa den andra tjänsten, eller
+- Ändra porten i `docker-compose.yml`, t.ex.:
+  ```yaml
+  ports:
+    - "7701:7700"
+  ```
+  Uppdatera även `MEILISEARCH_HOST` i `.env` till:
+  ```
+  MEILISEARCH_HOST=http://localhost:7701
+  ```
+
+#### ❌ Meilisearch startar men frontend visar ingen data
+
+✅ **Lösning:**
+
+- Kontrollera att `MEILI_MASTER_KEY` i `server/.env` är **exakt samma** som i `docker-compose.yml`.
+- Kontrollera att backend-servern initierar och indexerar datan till Meilisearch.
+
 ## ▶️ Start Development Environment
 
 ```bash
