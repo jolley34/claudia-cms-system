@@ -1,7 +1,7 @@
 import cookieParser from "cookie-parser";
 import express from "express";
 
-import cors from "./config/cors";
+import { corsMiddleware, setCOOPHeader } from "./config/cors";
 import adminRoutes from "./routes/adminRoutes";
 import authRoutes from "./routes/authRoutes";
 import customerRoutes from "./routes/customerRoutes";
@@ -10,7 +10,8 @@ import vpnKeyRoutes from "./routes/vpnKeyRoutes";
 const app = express();
 
 // Middleware
-app.use(cors);
+app.use(corsMiddleware);
+app.use(setCOOPHeader);
 app.use(express.json());
 app.use(cookieParser());
 

@@ -1,4 +1,5 @@
 import cors from "cors";
+import { NextFunction, Request, Response } from "express";
 
 export const corsOptions = {
   origin: (
@@ -17,4 +18,11 @@ export const corsOptions = {
   allowedHeaders: ["Content-Type", "Authorization"],
 };
 
-export default cors(corsOptions);
+const corsMiddleware = cors(corsOptions);
+
+const setCOOPHeader = (req: Request, res: Response, next: NextFunction) => {
+  res.setHeader("Cross-Origin-Opener-Policy", "same-origin-allow-popups");
+  next();
+};
+
+export { corsMiddleware, setCOOPHeader };
