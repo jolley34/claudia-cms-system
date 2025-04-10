@@ -6,14 +6,14 @@ services:
     ports:
       - "7700:7700"
     environment:
-      - MEILI_MASTER_KEY=50utlw0tVSmytl3c-Z3F9EqtiAP1vz48Xg5Fa3PYwaQ
+      - MEILI_MASTER_KEY=${MEILI_MASTER_KEY}
     volumes:
       - meilisearch-data:/data.ms
   server:
     build: ./server
     environment:
       - MEILISEARCH_HOST=http://meilisearch:7700
-      - MEILI_MASTER_KEY=50utlw0tVSmytl3c-Z3F9EqtiAP1vz48Xg5Fa3PYwaQ
+      - MEILI_MASTER_KEY=${MEILI_MASTER_KEY}
     depends_on:
       - meilisearch
     ports:
