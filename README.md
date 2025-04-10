@@ -130,9 +130,13 @@ MEILI_MASTER_KEY=your-api-key
 
 Godkänt (G):För att du ska få Godkänt (G) på ditt examensarbete, behöver du uppfylla samtliga kursmål och krav som nämnts i uppgiften. Här är en översikt av vad du skauppnå för G:
 
-- [x] Planering och Research:oUtföra en noggrann målgruppsanalys.oAnvändaett projekthanteringsverktyg för backlog till exempel TrelloellerKanbanföratt strukturera arbetet.
+- [x] Planering och Research:oUtföra en noggrann målgruppsanalys.
 
-•Design och Prototyping:oSkapa wireframes och prototyp i Figma som följer UX/UI-principer.oSe till att designen är responsiv för minst två olika skärmstorlekaroch följer WCAG 2.1-standarder.
+o Användaett projekthanteringsverktyg för backlog till exempel TrelloellerKanbanföratt strukturera arbetet.
+
+- [x] Design och Prototyping:oSkapa wireframes och prototyp i Figma som följer UX/UI-principer.
+
+oSe till att designen är responsiv för minst två olika skärmstorlekaroch följer WCAG 2.1-standarder.
 
 - [x] Applikationsutveckling:oUtveckla med ett modernt JavaScript-ramverk.
 
