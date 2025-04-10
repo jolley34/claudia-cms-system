@@ -13,4 +13,4 @@ RUN ls -l /app/server/dist/src || echo "src folder not found"
 RUN ls -R /app/server/dist
 ENV NODE_ENV=production
 EXPOSE 5001
-CMD ["npm", "start"]
+CMD ["node", "dist/src/index.js"]
