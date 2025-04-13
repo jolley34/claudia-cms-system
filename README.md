@@ -245,6 +245,10 @@ This project is open source and free to use. Feel free to add your name to the `
 
 ---
 
+## Deployed
+
+https://claudia-cms-system.netlify.app
+
 ## 💬 Feedback or Questions?
 
 Create an [issue](https://github.com/your-repo-url/issues) or contact me directly!
