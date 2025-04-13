@@ -80,12 +80,20 @@ cd ../server
 npm install
 ```
 
-## 🐳 Installera Meilisearch med Docker
+# 🚀 Meilisearch Setup with Docker
 
-För att köra Meilisearch lokalt använder projektet **Docker**. Se till att Docker är installerat på din dator.  
-👉 [Ladda ner Docker här](https://www.docker.com/products/docker-desktop) om du inte redan har det.
+This guide explains how to install and run **Meilisearch** locally using **Docker**.
 
-### 1️⃣ Skapa en `docker-compose.yml` i projektroten:
+## 📦 Prerequisites
+
+Make sure **Docker** is installed on your computer.  
+👉 [Download Docker here](https://www.docker.com/products/docker-desktop) if you haven’t already.
+
+---
+
+## 🐳 Installing Meilisearch with Docker
+
+### 1️⃣ Create a `docker-compose.yml` file in your project root:
 
 ```yaml
 version: "3.8"
@@ -104,52 +112,74 @@ volumes:
   meilisearch-data:
 ```
 
-> 🔑 Byt ut `your-api-key` mot samma nyckel som du använder i `server/.env`.
+> 🔑 Replace `your-api-key` with the same key you're using in `server/.env`.
 
-### 2️⃣ Starta Meilisearch-tjänsten:
+---
+
+### 2️⃣ Start the Meilisearch service
+
+In your terminal, run:
 
 ```bash
 docker-compose up -d
 ```
 
-### 3️⃣ Kontrollera att Meilisearch är igång:
+This will start Meilisearch in detached mode.
 
-Öppna [http://localhost:7700](http://localhost:7700) i din webbläsare.  
-Du bör se ett svar från Meilisearch som bekräftar att det körs korrekt.
+---
 
-### 🛠️ Vanliga fel & lösningar
+### 3️⃣ Confirm that Meilisearch is running
 
-#### ❌ Fel: `docker-compose: command not found`
+Open your browser and go to:  
+[http://localhost:7700](http://localhost:7700)
 
-Det betyder att Docker Compose inte är installerat eller inte tillgängligt i terminalen.
+You should see a welcome screen or a response from Meilisearch confirming that the service is running.
 
-✅ **Lösning:**
-Installera Docker Compose genom att följa instruktionerna för ditt operativsystem här:  
+---
+
+## 🛠️ Common Issues & Fixes
+
+### ❌ Error: `docker-compose: command not found`
+
+This means Docker Compose is either not installed or not accessible from your terminal.
+
+✅ **Fix:**  
+Install Docker Compose by following the official guide:  
 👉 https://docs.docker.com/compose/install/
 
-#### ❌ Fel: `bind: address already in use`
+---
 
-Det betyder att port `7700` redan används av en annan tjänst.
+### ❌ Error: `bind: address already in use`
 
-✅ **Lösning:**
+This means port `7700` is already in use by another application.
 
-- Stoppa den andra tjänsten, eller
-- Ändra porten i `docker-compose.yml`, t.ex.:
+✅ **Fix:**
+
+- Stop the conflicting service, or
+- Change the port mapping in `docker-compose.yml`, for example:
   ```yaml
   ports:
     - "7701:7700"
   ```
-  Uppdatera även `MEILISEARCH_HOST` i `.env` till:
+  Also update the `MEILISEARCH_HOST` in your `.env` file:
   ```
   MEILISEARCH_HOST=http://localhost:7701
   ```
 
-#### ❌ Meilisearch startar men frontend visar ingen data
+---
 
-✅ **Lösning:**
+### ❌ Meilisearch starts, but the frontend shows no data
 
-- Kontrollera att `MEILI_MASTER_KEY` i `server/.env` är **exakt samma** som i `docker-compose.yml`.
-- Kontrollera att backend-servern initierar och indexerar datan till Meilisearch.
+✅ **Fix:**
+
+- Ensure the `MEILI_MASTER_KEY` in your `server/.env` file is **exactly the same** as in `docker-compose.yml`.
+- Make sure your backend server is properly initializing and indexing the data into Meilisearch.
+
+---
+
+## ✅ Done!
+
+You're now ready to use Meilisearch in your local development environment. 🎉
 
 ## ▶️ Start Development Environment
 
@@ -191,20 +221,33 @@ MEILISEARCH_HOST=http://localhost:7700
 MEILI_MASTER_KEY=your-api-key
 ```
 
-### IMPORTANT/ Add a google admin to your local Docker to get accees!
+### 🔐 Add a Google Admin to Meilisearch (for Local Access)
 
-curl -X POST http://localhost:7700/indexes/admins/documents \  
- -H "Content-Type: application/json" \
- -H "Authorization: Bearer <your-meilisearch-master-key-here>" \
- -d '[
-{
-"id": "1231231414",
-"name": "Initial Admin",
-"email": "<Your Email Here>",
-"isAdmin": true,
-"sub": "admin"
-}
-]'
+To access protected routes or simulate authentication during development, you can manually add an admin to your local Meilisearch instance.
+
+#### ✅ IMPORTANT TO GAIN ACCESS / Run this command in your terminal:
+
+```bash
+curl -X POST http://localhost:7700/indexes/admins/documents \
+  -H "Content-Type: application/json" \
+  -H "Authorization: Bearer your-meilisearch-master-key-here" \
+  -d '[
+    {
+      "id": "1231231414",
+      "name": "Initial Admin",
+      "email": "your@email.com",
+      "isAdmin": true,
+      "sub": "admin"
+    }
+  ]'
+```
+
+#### 🔁 Replace the following values:
+
+- `your-meilisearch-master-key-here` → Your actual Meilisearch API key (`MEILI_MASTER_KEY`)
+- `"your@email.com"` → Your own email address
+
+> 📌 This step is important to seed the `admins` index so your local environment can recognize you as an admin.
 
 ## ✅ TODO / Upcoming Features
 
