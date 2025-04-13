@@ -5,16 +5,7 @@ export default defineConfig({
   plugins: [
     react({
       babel: {
-        plugins: [
-          [
-            "babel-plugin-styled-components",
-            {
-              ssr: false,
-              displayName: true,
-              fileName: true,
-            },
-          ],
-        ],
+        plugins: ["babel-plugin-styled-components"],
       },
     }),
   ],
