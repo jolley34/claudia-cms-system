@@ -11,10 +11,34 @@ import { VpnKey } from "../types/types";
 
 const vpnKeyIndex = meiliClient.index("vpn_keys");
 
+const INDEX_NAME = "vpn_keys";
+
 export const addVpnKeys = async (
   req: Request,
   res: Response
 ): Promise<void> => {
+  // Kontrollera och skapa index om det inte finns
+  try {
+    const indexes = await meiliClient.getIndexes();
+    const indexExists = indexes.results.some(
+      (index) => index.uid === INDEX_NAME
+    );
+
+    if (!indexExists) {
+      console.log(`Skapar Meilisearch-index: ${INDEX_NAME}`);
+      await meiliClient.createIndex(INDEX_NAME, { primaryKey: "id" });
+      console.log(`Index ${INDEX_NAME} skapat framgångsrikt`);
+    }
+  } catch (error) {
+    console.error("Fel vid kontroll/skapande av index:", error);
+    res
+      .status(500)
+      .json({ message: "Kunde inte skapa Meilisearch-index", error });
+    return;
+  }
+
+  const vpnKeyIndex = meiliClient.index(INDEX_NAME);
+
   const inputParseResult = vpnKeysInputSchema.safeParse(req.body);
   if (!inputParseResult.success) {
     res.status(400).json({ message: inputParseResult.error.errors[0].message });
