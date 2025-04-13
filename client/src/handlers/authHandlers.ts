@@ -18,7 +18,7 @@ export const handleGoogleSuccess = async (
 
   try {
     const res = await axios.post<{ message: string; user: Admin }>(
-      "http://localhost:5001/api/auth/google",
+      `${import.meta.env.VITE_API_URL}/api/auth/google`, // Använd VITE_API_URL
       { token: idToken }
     );
 

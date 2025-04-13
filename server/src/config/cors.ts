@@ -1,7 +1,7 @@
 import cors from "cors";
 
 export const corsOptions = {
-  origin: "http://localhost:3000",
+  origin: ["https://claudia-cms-system.netlify.app", "http://localhost:3000"],
   credentials: true,
   methods: ["GET", "POST", "PUT", "DELETE"],
   allowedHeaders: ["Content-Type", "Authorization"],
