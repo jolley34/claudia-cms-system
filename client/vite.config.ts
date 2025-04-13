@@ -11,7 +11,7 @@ export default defineConfig({
     outDir: "dist",
   },
   server: {
-    port: 3000, // Klienten körs på port 3000
+    port: 3000,
     proxy: {
       "/api": {
         target: "http://localhost:5001", // Proxylar API-anrop till lokal server

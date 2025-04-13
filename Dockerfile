@@ -1,11 +1,7 @@
-FROM node:23-alpine
+FROM node:23
 WORKDIR /app
-COPY package.json ./
-COPY tsconfig.json ./
-COPY server/ ./server/
-RUN npm install --prefix server
-COPY server/tsconfig.json ./server/
-WORKDIR /app/server
-RUN npm run build
+COPY package*.json ./
+RUN npm install
+COPY . .
 EXPOSE 5001
-CMD ["node", "dist/src/index.js"]
+CMD ["npm", "start"]

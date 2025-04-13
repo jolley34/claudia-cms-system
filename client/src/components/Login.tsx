@@ -54,8 +54,7 @@ interface LoginProps {
 
 const Login: React.FC<LoginProps> = ({ onLoginSuccess }) => {
   const navigate = useNavigate();
-  const [showModal, setShowModal] = useState(false);
-
+  const [showModal, setShowModal] = useState<boolean>(false);
   return (
     <GoogleOAuthProvider clientId={import.meta.env.VITE_GOOGLE_CLIENT_ID ?? ""}>
       <Wrapper>
