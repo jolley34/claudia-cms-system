@@ -1,6 +1,7 @@
 import Cookies from "js-cookie";
 import { useState } from "react";
 import { BrowserRouter as Router } from "react-router-dom";
+import { StyleSheetManager } from "styled-components";
 import { AppRoutes } from "./routes/AppRoutes";
 import api from "./services/api";
 import { GlobalStyles } from "./styles/GlobalStyles";
@@ -22,14 +23,16 @@ function App() {
 
   return (
     <div className="App">
-      <GlobalStyles />
-      <Router>
-        <AppRoutes
-          user={user}
-          onLoginSuccess={handleLoginSuccess}
-          onLogout={handleLogout}
-        />
-      </Router>
+      <StyleSheetManager>
+        <GlobalStyles />
+        <Router>
+          <AppRoutes
+            user={user}
+            onLoginSuccess={handleLoginSuccess}
+            onLogout={handleLogout}
+          />
+        </Router>
+      </StyleSheetManager>
     </div>
   );
 }
