@@ -4,14 +4,13 @@ import {
   deleteAdmin,
   getAdmins,
 } from "../controllers/adminController";
-import { verifyAdmin } from "../controllers/authController";
 
 const router = Router();
 
-router.post("/", verifyAdmin, addAdmin); // POST
+router.post("/", addAdmin); // POST
 
-router.get("/", verifyAdmin, getAdmins); // GET
+router.get("/", getAdmins); // GET
 
-router.delete("/:id", verifyAdmin, deleteAdmin); // DELETE
+router.delete("/:id", deleteAdmin); // DELETE
 
 export default router;
