@@ -191,6 +191,21 @@ MEILISEARCH_HOST=http://localhost:7700
 MEILI_MASTER_KEY=your-api-key
 ```
 
+### IMPORTANT/ Add a google admin to your local Docker to get accees!
+
+curl -X POST http://localhost:7700/indexes/admins/documents \  
+ -H "Content-Type: application/json" \
+ -H "Authorization: Bearer <your-meilisearch-master-key-here>" \
+ -d '[
+{
+"id": "1231231414",
+"name": "Initial Admin",
+"email": "<Your Email Here>",
+"isAdmin": true,
+"sub": "admin"
+}
+]'
+
 ## ✅ TODO / Upcoming Features
 
 - [ ] Role-based permissions
