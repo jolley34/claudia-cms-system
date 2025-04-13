@@ -1,4 +1,3 @@
-// client/vite.config.ts
 import react from "@vitejs/plugin-react";
 import { defineConfig } from "vite";
 
@@ -6,7 +5,16 @@ export default defineConfig({
   plugins: [
     react({
       babel: {
-        plugins: ["babel-plugin-styled-components"],
+        plugins: [
+          [
+            "babel-plugin-styled-components",
+            {
+              ssr: false,
+              displayName: true,
+              fileName: true,
+            },
+          ],
+        ],
       },
     }),
   ],
@@ -15,7 +23,7 @@ export default defineConfig({
   },
   build: {
     outDir: "dist",
-    cssCodeSplit: true,
+    cssCodeSplit: true, // Säkerställer att CSS hanteras korrekt
   },
   server: {
     port: 3000,
