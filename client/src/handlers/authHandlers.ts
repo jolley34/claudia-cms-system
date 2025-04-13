@@ -1,8 +1,9 @@
 import { CredentialResponse } from "@react-oauth/google";
-import axios from "axios";
 import Cookies from "js-cookie";
 import { NavigateFunction } from "react-router-dom";
 import { Admin, GoogleUser } from "../types/types";
+
+import api from "../services/api";
 
 export const handleGoogleSuccess = async (
   credentialResponse: CredentialResponse,
@@ -17,8 +18,8 @@ export const handleGoogleSuccess = async (
   }
 
   try {
-    const res = await axios.post<{ message: string; user: Admin }>(
-      `${import.meta.env.VITE_API_URL}/api/auth/google`, // Använd VITE_API_URL
+    const res = await api.post<{ message: string; user: Admin }>(
+      "/auth/google",
       { token: idToken }
     );
 
@@ -26,25 +27,25 @@ export const handleGoogleSuccess = async (
 
     const user = res.data.user;
 
-    // Kontrollera om användaren är admin
     if (!user || !user.isAdmin) {
       console.warn("Användaren är inte admin.");
-      setShowModal(true); // Visa modalen om användaren inte är admin
+      setShowModal(true);
       return;
     }
 
-    // Sätt cookies och fortsätt med inloggning
+    // Sätt cookie med mer flexibla inställningar
     Cookies.set("token", idToken, {
       expires: 1,
-      secure: true,
-      sameSite: "strict",
+      secure: import.meta.env.PROD, // Endast secure i produktion
+      sameSite: import.meta.env.PROD ? "lax" : "strict", // Lax i produktion för cross-site
+      path: "/",
     });
 
-    onLoginSuccess(user); // Passera användaren till login-funktionen
-    navigate("/admin"); // Navigera till admin-sidan
+    onLoginSuccess(user);
+    navigate("/admin");
   } catch (error) {
     console.error("Fel vid inloggning:", error);
-    setShowModal(true); // Visa modalen vid fel
+    setShowModal(true);
   }
 };
 
