@@ -60,7 +60,7 @@ const Login: React.FC<LoginProps> = ({ onLoginSuccess }) => {
       <Wrapper>
         <Card>
           <FlexColumn>
-            <h3>Claudia CMS</h3>
+            <h1>Claudia CMS</h1>
             <GoogleLogin
               onSuccess={(credentialResponse) =>
                 handleGoogleSuccess(

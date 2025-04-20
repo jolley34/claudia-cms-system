@@ -26,6 +26,10 @@ export const GlobalStyles = createGlobalStyle`
     list-style: none;
   }
 
+  label {
+    font-weight: 700;
+  }
+
   input {
     width: 100%;
     padding: 0.5rem;

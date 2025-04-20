@@ -1,4 +1,3 @@
-// src/components/CustomerList/CustomerForm.tsx
 import React from "react";
 import styled from "styled-components";
 import { Customer } from "../../types/types";
@@ -20,6 +19,12 @@ const FlexRow = styled.div`
   flex-direction: column;
   gap: 0.75rem;
   width: 100%;
+`;
+
+const InputContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
 `;
 
 const ToggleContainer = styled.div`
@@ -109,41 +114,63 @@ export const CustomerForm: React.FC<CustomerFormProps> = ({
     <Card>
       <h2>Lägg till kund</h2>
       <FlexRow>
-        <input
-          value={newCustomer.customer_name}
-          onChange={(e) =>
-            setNewCustomer({ ...newCustomer, customer_name: e.target.value })
-          }
-          placeholder="Kundnamn"
-        />
-        <input
-          value={newCustomer.contact_name || ""}
-          onChange={(e) =>
-            setNewCustomer({ ...newCustomer, contact_name: e.target.value })
-          }
-          placeholder="Kontaktperson"
-        />
-        <input
-          value={newCustomer.contact_email}
-          onChange={(e) =>
-            setNewCustomer({ ...newCustomer, contact_email: e.target.value })
-          }
-          placeholder="Email"
-        />
-        <input
-          value={newCustomer.contact_phone}
-          onChange={(e) =>
-            setNewCustomer({ ...newCustomer, contact_phone: e.target.value })
-          }
-          placeholder="Kontakt telefon"
-        />
-        <input
-          value={newCustomer.edr_site_token || ""}
-          onChange={(e) =>
-            setNewCustomer({ ...newCustomer, edr_site_token: e.target.value })
-          }
-          placeholder="EDR site token"
-        />
+        <InputContainer>
+          <label htmlFor="customer_name">Kundnamn</label>
+          <input
+            id="customer_name"
+            value={newCustomer.customer_name}
+            onChange={(e) =>
+              setNewCustomer({ ...newCustomer, customer_name: e.target.value })
+            }
+            placeholder="Kundnamn"
+          />
+        </InputContainer>
+        <InputContainer>
+          <label htmlFor="contact_name">Kontaktperson</label>
+          <input
+            id="contact_name"
+            value={newCustomer.contact_name || ""}
+            onChange={(e) =>
+              setNewCustomer({ ...newCustomer, contact_name: e.target.value })
+            }
+            placeholder="Kontaktperson"
+          />
+        </InputContainer>
+        <InputContainer>
+          <label htmlFor="contact_email">Email</label>
+          <input
+            id="contact_email"
+            value={newCustomer.contact_email}
+            onChange={(e) =>
+              setNewCustomer({ ...newCustomer, contact_email: e.target.value })
+            }
+            placeholder="Email"
+            type="email"
+          />
+        </InputContainer>
+        <InputContainer>
+          <label htmlFor="contact_phone">Kontakt telefon</label>
+          <input
+            id="contact_phone"
+            value={newCustomer.contact_phone}
+            onChange={(e) =>
+              setNewCustomer({ ...newCustomer, contact_phone: e.target.value })
+            }
+            placeholder="Kontakt telefon"
+            type="tel"
+          />
+        </InputContainer>
+        <InputContainer>
+          <label htmlFor="edr_site_token">EDR site token</label>
+          <input
+            id="edr_site_token"
+            value={newCustomer.edr_site_token || ""}
+            onChange={(e) =>
+              setNewCustomer({ ...newCustomer, edr_site_token: e.target.value })
+            }
+            placeholder="EDR site token"
+          />
+        </InputContainer>
         <ToggleContainer>
           <ToggleSwitch>
             <Paragraph>EDR</Paragraph>
@@ -179,19 +206,23 @@ export const CustomerForm: React.FC<CustomerFormProps> = ({
             <Slider className="slider" />
           </ToggleSwitch>
         </ToggleContainer>
-        <ActiveToggle
-          value={newCustomer.status || ""}
-          onChange={(e) =>
-            setNewCustomer({
-              ...newCustomer,
-              status: e.target.value as "active" | "inactive" | undefined,
-            })
-          }
-        >
-          <option value="">Välj status</option>
-          <option value="active">Active</option>
-          <option value="inactive">Inactive</option>
-        </ActiveToggle>
+        <InputContainer>
+          <label htmlFor="status">Status</label>
+          <ActiveToggle
+            id="status"
+            value={newCustomer.status || ""}
+            onChange={(e) =>
+              setNewCustomer({
+                ...newCustomer,
+                status: e.target.value as "active" | "inactive" | undefined,
+              })
+            }
+          >
+            <option value="">Välj status</option>
+            <option value="active">Active</option>
+            <option value="inactive">Inactive</option>
+          </ActiveToggle>
+        </InputContainer>
         <ButtonContainer>
           <button onClick={handleAddCustomer}>Spara</button>
         </ButtonContainer>
