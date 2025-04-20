@@ -37,7 +37,7 @@ export const VpnKeyForm: React.FC<VpnKeyFormProps> = ({
           setIsDragging(false);
         }}
       >
-        <p>Drag & drop .txt-fil här eller</p>
+        <h1>Drag & drop .txt-fil här eller</h1>
         <input
           type="file"
           accept=".txt"

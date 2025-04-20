@@ -39,8 +39,9 @@ const ButtonRow = styled.div`
   gap: 10px;
 `;
 
-const Title = styled.h3`
+const Title = styled.h1`
   font-weight: lighter;
+  font-size: 1.5rem;
 `;
 
 interface DeleteConfirmationProps {
