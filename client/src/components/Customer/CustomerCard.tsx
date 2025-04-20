@@ -14,6 +14,10 @@ const Card = styled.div`
   position: relative;
   width: 100%;
   cursor: pointer;
+
+  @media (max-width: 600px) {
+    flex-direction: column;
+  }
 `;
 
 const InfoContainer = styled.div`
@@ -28,6 +32,10 @@ const ColorImage = styled.div`
   height: 200px;
   background-color: #fb8989;
   border-radius: 10px;
+
+  @media (max-width: 600px) {
+    width: 100%;
+  }
 `;
 
 const FlexRowAbsolute = styled.div`
@@ -45,6 +53,13 @@ const FlexRowBig = styled.div`
   justify-content: space-between;
   border-bottom: 0.5px solid lightgray;
   padding-bottom: 0.5rem;
+
+  @media (max-width: 600px) {
+    flex-direction: column;
+    align-items: start;
+    padding-bottom: 0.5rem;
+    gap: 0.5rem;
+  }
 `;
 
 const FlexColumn = styled.div`
@@ -63,6 +78,10 @@ const StyledInput = styled.input`
   box-sizing: border-box;
   border: 1px solid #007bff;
   width: 50%;
+
+  @media (max-width: 600px) {
+    width: 100%;
+  }
 `;
 
 const Paragraph = styled.p`
@@ -73,6 +92,7 @@ const Paragraph = styled.p`
 
 const ParagraphLighter = styled(Paragraph)`
   font-weight: lighter;
+  word-break: break-all;
 `;
 
 const DeleteButton = styled.button`
@@ -84,7 +104,7 @@ const DeleteButton = styled.button`
 `;
 
 const EmailButton = styled.button`
-  background-color: #007bff;
+  background-color: #004794;
   color: white;
   border: none;
   padding: 0.5rem 1rem;

@@ -13,6 +13,10 @@ const Card = styled.div`
   background-color: white;
   position: relative;
   width: 100%;
+
+  @media (max-width: 600px) {
+    flex-direction: column;
+  }
 `;
 
 const InfoContainer = styled.div`
@@ -27,6 +31,10 @@ const ColorImage = styled.div`
   height: 200px;
   background-color: #fb8989;
   border-radius: 10px;
+
+  @media (max-width: 600px) {
+    width: 100%;
+  }
 `;
 
 const FlexRowAbsolute = styled.div`
@@ -36,6 +44,11 @@ const FlexRowAbsolute = styled.div`
   bottom: 0;
   right: 0;
   margin: 1rem;
+  @media (max-width: 600px) {
+    position: relative;
+    margin: 0rem;
+    padding: 0.5rem;
+  }
 `;
 
 const FlexRowBigUnEdit = styled.div`
@@ -46,6 +59,13 @@ const FlexRowBigUnEdit = styled.div`
   justify-content: space-between;
   border-bottom: 0.5px solid lightgray;
   padding-bottom: 0.5rem;
+
+  @media (max-width: 600px) {
+    flex-direction: column;
+    align-items: start;
+    padding-bottom: 0.5rem;
+    gap: 0.5rem;
+  }
 `;
 
 const Paragraph = styled.p`
@@ -56,6 +76,7 @@ const Paragraph = styled.p`
 
 const ParagraphLighter = styled(Paragraph)`
   font-weight: lighter;
+  word-break: break-all;
 `;
 
 const DeleteButton = styled.button`

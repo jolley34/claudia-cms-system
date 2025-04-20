@@ -39,7 +39,7 @@ export const GlobalStyles = createGlobalStyle`
     font-size: 1rem;
     border: none;
     border-radius: 4px;
-    background-color: #007bff;
+    background-color: #004794;
     color: white;
     transition: background-color 0.2s ease;
 

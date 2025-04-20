@@ -27,6 +27,8 @@ const ToggleContainer = styled.div`
   justify-content: space-between;
   align-items: center;
   padding: 0.75rem;
+  gap: 1rem;
+  flex-wrap: wrap;
 `;
 
 const ToggleSwitch = styled.label`
